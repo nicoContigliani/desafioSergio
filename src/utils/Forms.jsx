@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Resultante from './Resultante';
 
 const Forms = () => {
+  const [numeros, setNumero] = useState([1,2,3,4,5,6])
   const [dataUser, setDataUser] = useState({
     nombre: "Nico",
     edad: 34,
@@ -10,12 +12,12 @@ const Forms = () => {
     hobbie: "desarrollo"
   })
   const [resultante, setResultante] = useState([
-    {
-      nombre: "Nico",
-      edad: 34,
-      carrera: "analisis de sistemas",
-      hobbie: "desarrollo"
-    }
+    // {
+    //   nombre: "Nico",
+    //   edad: 34,
+    //   carrera: "analisis de sistemas",
+    //   hobbie: "desarrollo"
+    // }
   ])
 
 
@@ -85,6 +87,11 @@ const Forms = () => {
       </Form>
 
 
+           
+
+      {
+        (resultante.length==0)?(""):( <Resultante resultante={resultante}/>)
+      }
 
     </div>
   )
